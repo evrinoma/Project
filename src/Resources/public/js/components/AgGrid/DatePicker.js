@@ -1,6 +1,6 @@
-import '../../../../../../../node_modules/jquery-ui/ui/widgets/datepicker.js';
-import '../../../../../../../node_modules/jquery-ui/ui/i18n/datepicker-ru';
-import '../../../../../../../node_modules/jquery-ui/themes/base/all.css';
+import '../../../../../../../../../node_modules/jquery-ui/ui/widgets/datepicker.js';
+import '../../../../../../../../../node_modules/jquery-ui/ui/i18n/datepicker-ru';
+import '../../../../../../../../../node_modules/jquery-ui/themes/base/all.css';
 
 window.getDatePicker = function getDatePicker() {
     function Datepicker() {

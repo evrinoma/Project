@@ -12,7 +12,7 @@ use JMS\Serializer\Annotation\Type;
  * @ORM\Table(name="project", indexes={@ORM\Index(name="IDX_2FB3D0EE979B1AD6", columns={"company_id"}), @ORM\Index(name="IDX_2FB3D0EE896DBBDE", columns={"updated_by_id"}), @ORM\Index(name="IDX_2FB3D0EEB03A8386", columns={"created_by_id"})})
  * @ORM\Entity
  */
-class Project
+class BaseProject
 {
     use ActiveTrait;
 
@@ -25,13 +25,6 @@ class Project
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
-    /**
-     * @var Contragent
-     * @Type("App\Entity\Contragent")
-     * @ORM\ManyToOne(targetEntity="Contragent")
-     */
-    private $contragent;
 
     /**
      * @var string
@@ -166,16 +159,5 @@ class Project
     {
         return $this->updatedById;
     }
-
-    /**
-     * @return Contragent
-     */
-    public function getContragent(): Contragent
-    {
-        return $this->contragent;
-    }
-
-
 //endregion Getters/Setters
-
 }

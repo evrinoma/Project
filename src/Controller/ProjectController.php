@@ -23,7 +23,7 @@ final class ProjectController extends AbstractController
     {
         $event = ['titleHeader' => 'Project', 'pageName' => 'Project'];
 
-        return $this->render('QuantitySurveyor/project.html.twig', $event);
+        return $this->render('@EvrinomaProject/project.html.twig', $event);
     }
 
 //endregion Public

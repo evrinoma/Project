@@ -37,7 +37,7 @@
 <script>
     import {AgGridVue} from "ag-grid-vue";
     import {fetch} from 'whatwg-fetch';
-    import DatePicker from '../../Components/AgGrid/DatePicker';
+    import DatePicker from '../../components/AgGrid/DatePicker';
 
     export default {
         name: 'agProjectVue',
@@ -62,7 +62,7 @@
                 params.api.sizeColumnsToFit();
             },
             loadRowData() {
-                fetch(location.protocol + '//' + location.hostname + '/evrinoma/api/quantity_surveyor/project')
+                fetch(location.protocol + '//' + location.hostname + '/evrinoma/api/project')
                     .then(result => result.json())
                     .then(rowData => this.rowData = rowData);
             },
@@ -72,7 +72,7 @@
             },
         },
         beforeMount() {
-            fetch(location.protocol + '//' + location.hostname + '/evrinoma/api/quantity_surveyor/project/column_defs')
+            fetch(location.protocol + '//' + location.hostname + '/evrinoma/api/project/column_defs')
                 .then(result => result.json())
                 .then(rowData => this.columnDefs = rowData);
             //помпонеты редактирования
@@ -87,8 +87,8 @@
 </script>
 
 <style lang="scss">
-    @import "../../../../node_modules/ag-grid-community/dist/styles/ag-grid.css";
-    @import "../../../../node_modules/ag-grid-community/dist/styles/ag-theme-balham-dark.css";
+    @import "../../../../../../../../../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+    @import "../../../../../../../../../node_modules/ag-grid-community/dist/styles/ag-theme-balham-dark.css";
 
     .ui.segment.block {
         height: 90vh;

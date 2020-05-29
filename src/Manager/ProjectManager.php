@@ -5,7 +5,7 @@ namespace Evrinoma\ProjectBundle\Manager;
 
 
 use Evrinoma\GridBundle\AgGrid\ColumnDef;
-use Evrinoma\ProjectBundle\Entity\Project;
+use Evrinoma\ProjectBundle\Entity\BaseProject;
 use Evrinoma\UtilsBundle\Manager\AbstractEntityManager;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 
@@ -17,7 +17,7 @@ class ProjectManager extends AbstractEntityManager
     /**
      * @var string
      */
-    protected $repositoryClass = Project::class;
+    protected $repositoryClass = BaseProject::class;
 //endregion Fields
 
 //region SECTION: Getters/Setters

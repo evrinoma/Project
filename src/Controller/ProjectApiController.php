@@ -46,7 +46,7 @@ final class ProjectApiController extends AbstractApiController
 //region SECTION: Public
 
     /**
-     * @Rest\Get("/evrinoma/api/project", options={"expose"=true}, name="api_project")
+     * @Rest\Get("/api/project", options={"expose"=true}, name="api_project")
      * @SWG\Get(tags={"project"})
      * @SWG\Response(response=200,description="Returns projects")
      *
@@ -58,7 +58,7 @@ final class ProjectApiController extends AbstractApiController
     }
 
     /**
-     * @Rest\Get("/evrinoma/api/project/column_defs", options={"expose"=true}, name="api_column_defs_project")
+     * @Rest\Get("/api/project/column_defs", options={"expose"=true}, name="api_column_defs_project")
      * @SWG\Get(tags={"project"})
      * @SWG\Response(response=200,description="Returns column_defs project")
      *
