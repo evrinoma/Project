@@ -1,0 +1,3 @@
+project_api:
+  resource: "@EvrinomaProjectBundle/Controller/ProjectApiController.php"
+  type: annotation

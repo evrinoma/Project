@@ -1,0 +1,12 @@
+{% block title %}{{ titleHeader }}{% endblock %}
+
+{% block page %}
+        {{ pageName }}
+    {% include '@EvrinomaProject/project/template.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {% include '@EvrinomaProject/project/js.html.twig' %}
+{% endblock %}
+
+{% block title %}{{ titleHeader }}{% endblock %}

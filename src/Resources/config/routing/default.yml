@@ -1,0 +1,6 @@
+project:
+  path: /project
+  methods: GET
+  defaults: { _controller: Evrinoma\ProjectBundle\Controller\ProjectController::project }
+  options:
+    expose: true

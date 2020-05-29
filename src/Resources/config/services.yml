@@ -1,0 +1,25 @@
+services:
+  Evrinoma\ProjectBundle\Controller\ProjectController:
+    alias:  evrinoma.project.controller
+    public: true
+    deprecated:
+
+  evrinoma.project.controller:
+    class: Evrinoma\ProjectBundle\Controller\ProjectController
+
+  Evrinoma\ProjectBundle\Controller\ProjectApiController:
+    alias: evrinoma.project.api.controller
+    public: true
+    deprecated:
+
+  evrinoma.project.api.controller:
+    class: Evrinoma\ProjectBundle\Controller\ProjectApiController
+    arguments:
+      - '@evrinoma.project.manager'
+
+  evrinoma.project.manager:
+    alias: Evrinoma\ProjectBundle\Manager\ProjectManager
+
+  Evrinoma\ProjectBundle\Manager\ProjectManager:
+    arguments: ['@doctrine.orm.entity_manager'']
+
