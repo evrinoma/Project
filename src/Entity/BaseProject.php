@@ -4,17 +4,18 @@ namespace Evrinoma\ProjectBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Evrinoma\UtilsBundle\Entity\ActiveTrait;
+use Evrinoma\UtilsBundle\Entity\CreateUpdateAtTrait;
 use JMS\Serializer\Annotation\Type;
 
 /**
  * Project
  *
- * @ORM\Table(name="project", indexes={@ORM\Index(name="IDX_2FB3D0EE979B1AD6", columns={"company_id"}), @ORM\Index(name="IDX_2FB3D0EE896DBBDE", columns={"updated_by_id"}), @ORM\Index(name="IDX_2FB3D0EEB03A8386", columns={"created_by_id"})})
+ * @ORM\Table(name="project")
  * @ORM\Entity
  */
 class BaseProject
 {
-    use ActiveTrait;
+    use ActiveTrait, CreateUpdateAtTrait;
 
 //region SECTION: Fields
     /**
@@ -56,35 +57,6 @@ class BaseProject
      */
     private $dateFinish;
 
-    /**
-     * @Type("DateTime<'d-m-Y'>")
-     * @var \DateTime
-     *
-     * @ORM\Column(name="created_at", type="datetime", nullable=false)
-     */
-    private $createdAt;
-
-    /**
-     * @Type("DateTime<'d-m-Y'>")
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated_at", type="datetime", nullable=false)
-     */
-    private $updatedAt;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="created_by_id", type="integer", nullable=true)
-     */
-    private $createdById;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="updated_by_id", type="integer", nullable=true)
-     */
-    private $updatedById;
 //endregion Fields
 
 //region SECTION: Getters/Setters
@@ -126,38 +98,6 @@ class BaseProject
     public function getDateFinish(): ?\DateTime
     {
         return $this->dateFinish;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getCreatedAt(): \DateTime
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getUpdatedAt(): \DateTime
-    {
-        return $this->updatedAt;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getCreatedById(): ?int
-    {
-        return $this->createdById;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getUpdatedById(): ?int
-    {
-        return $this->updatedById;
     }
 //endregion Getters/Setters
 }
