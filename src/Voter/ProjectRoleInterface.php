@@ -1,11 +1,11 @@
 <?php
 
-namespace Evrinoma\ProjectBundle\Voiter;
+namespace Evrinoma\ProjectBundle\Voter;
 
 /**
  * Interface ProjectRoleInterface
  *
- * @package Evrinoma\ProjectBundle\Voiter
+ * @package Evrinoma\ProjectBundle\Voter
  */
 interface ProjectRoleInterface
 {
