@@ -10,6 +10,11 @@ use Evrinoma\ProjectBundle\Model\AbstractBaseProject;
 use Evrinoma\UtilsBundle\Manager\AbstractEntityManager;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 
+/**
+ * Class ProjectManager
+ *
+ * @package Evrinoma\ProjectBundle\Manager
+ */
 class ProjectManager extends AbstractEntityManager
 {
     use RestTrait;

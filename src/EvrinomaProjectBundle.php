@@ -17,15 +17,6 @@ class EvrinomaProjectBundle extends Bundle
     {
         parent::build($container);
         $container->addCompilerPass(new MapEntityPass($this->getNamespace(), $this->getPath()));
-//        $ormCompilerClass = 'Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass';
-//        if (class_exists($ormCompilerClass)) {
-//            $container->addCompilerPass(
-
-//                    ['Evrinoma\ProjectBundle\Model'],
-//                    [sprintf('%s/Model', $this->path)]
-//                )
-//            );
-//        }
     }
 //endregion Public
 

@@ -75,13 +75,13 @@ class EvrinomaProjectExtension extends Extension
 
         if (isset(self::$doctrineDrivers[$config['db_driver']])) {
             $loader->load('doctrine.yml');
-            $container->setAlias('evrinoma.doctrine_registry', new Alias(self::$doctrineDrivers[$config['db_driver']]['registry'], false));
+            $container->setAlias('evrinoma.'.$this->getAlias().'.doctrine_registry', new Alias(self::$doctrineDrivers[$config['db_driver']]['registry'], false));
         }
         $container->setParameter('evrinoma.'.$this->getAlias().'.backend_type_'.$config['db_driver'], true);
 
         if (isset(self::$doctrineDrivers[$config['db_driver']])) {
-            $definition = $container->getDefinition('evrinoma.object_manager');
-            $definition->setFactory([new Reference('evrinoma.doctrine_registry'), 'getManager']);
+            $definition = $container->getDefinition('evrinoma.'.$this->getAlias().'.object_manager');
+            $definition->setFactory([new Reference('evrinoma.'.$this->getAlias().'.doctrine_registry'), 'getManager']);
         }
 
         $this->remapParametersNamespaces(
@@ -89,9 +89,9 @@ class EvrinomaProjectExtension extends Extension
             $container,
             [
                 '' => [
-                    'db_driver'           => 'evrinoma.storage',
-                    'class'               => 'evrinoma.project.class',
-                    'entity_manager_name' => 'evrinoma.entity_manager_name',
+                    'db_driver'           => 'evrinoma.'.$this->getAlias().'.storage',
+                    'class'               => 'evrinoma.'.$this->getAlias().'.class',
+                    'entity_manager_name' => 'evrinoma.'.$this->getAlias().'.entity_manager_name',
                 ],
             ]
         );
