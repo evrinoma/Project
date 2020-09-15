@@ -29,13 +29,6 @@ class EvrinomaProjectExtension extends Extension
             'tag'      => 'doctrine.event_subscriber',
         ),
     );
-    /**
-     * @var YamlFileLoader
-     */
-    private $lazyLoader;
-
-
-    private $path;
 //endregion Fields
 
 
