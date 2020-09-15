@@ -3,6 +3,8 @@
 namespace Evrinoma\ProjectBundle\Controller;
 
 
+use Doctrine\ORM\Decorator\EntityManagerDecorator;
+use Doctrine\ORM\EntityManagerInterface;
 use Evrinoma\ProjectBundle\Manager\ProjectManager;
 use Evrinoma\UtilsBundle\Controller\AbstractApiController;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -28,7 +30,7 @@ final class ProjectApiController extends AbstractApiController
      *
      * @param ProjectManager $projectManager
      */
-    public function __construct(ProjectManager $projectManager)
+    public function __construct($projectManager)
     {
         $serializer = \JMS\Serializer\SerializerBuilder::create()
             ->setPropertyNamingStrategy(

@@ -4,8 +4,9 @@
 namespace Evrinoma\ProjectBundle\Manager;
 
 
+use Doctrine\ORM\EntityManagerInterface;
 use Evrinoma\GridBundle\AgGrid\ColumnDef;
-use Evrinoma\ProjectBundle\Entity\BaseProject;
+use Evrinoma\ProjectBundle\Model\AbstractBaseProject;
 use Evrinoma\UtilsBundle\Manager\AbstractEntityManager;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 
@@ -17,8 +18,23 @@ class ProjectManager extends AbstractEntityManager
     /**
      * @var string
      */
-    protected $repositoryClass = BaseProject::class;
+    protected $repositoryClass = AbstractBaseProject::class;
 //endregion Fields
+
+//region SECTION: Constructor
+    /**
+     * ProjectManager constructor.
+     *
+     * @param EntityManagerInterface $entityManager
+     * @param string                 $repositoryClass
+     */
+    public function __construct(EntityManagerInterface $entityManager, string $repositoryClass)
+    {
+        $this->repositoryClass = $repositoryClass;
+        parent::__construct($entityManager);
+    }
+
+//endregion Constructor
 
 //region SECTION: Getters/Setters
     /**
@@ -52,13 +68,11 @@ class ProjectManager extends AbstractEntityManager
 
         $dateStart = new ColumnDef();
         $dateStart->setType(ColumnDef::DATE_COLUMN)->setHeaderName('Дата начала')->setField('dateStart')->setWidth(5)->setResizable()
-            ->setCellEditor(ColumnDef::CELL_EDITOR_DATE_PICKER)
-        ;
+            ->setCellEditor(ColumnDef::CELL_EDITOR_DATE_PICKER);
 
         $dateFinish = new ColumnDef();
         $dateFinish->setType(ColumnDef::DATE_COLUMN)->setHeaderName('Дата окончания')->setField('dateFinish')->setWidth(5)->setResizable()
-            ->setCellEditor(ColumnDef::CELL_EDITOR_DATE_PICKER)
-        ;
+            ->setCellEditor(ColumnDef::CELL_EDITOR_DATE_PICKER);
 
         $description = new ColumnDef();
         $description->setHeaderName('Описание')->setField('description')->setWidth(140)->setCellEditor(ColumnDef::CELL_EDITOR_AG_LARGE_TEXT_CELL_EDITOR);

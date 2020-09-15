@@ -14,12 +14,11 @@ services:
 
   evrinoma.project.api.controller:
     class: Evrinoma\ProjectBundle\Controller\ProjectApiController
-    arguments:
-      - '@evrinoma.project.manager'
+    arguments: ['@evrinoma.project.manager']
 
   evrinoma.project.manager:
     alias: Evrinoma\ProjectBundle\Manager\ProjectManager
 
   Evrinoma\ProjectBundle\Manager\ProjectManager:
-    arguments: ['@doctrine.orm.entity_manager']
+    arguments: ['@doctrine.orm.entity_manager', '%evrinoma.project.class%']
 
