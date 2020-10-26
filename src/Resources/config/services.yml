@@ -6,6 +6,7 @@ services:
 
   evrinoma.project.controller:
     class: Evrinoma\ProjectBundle\Controller\ProjectController
+    autowire: true
 
   Evrinoma\ProjectBundle\Controller\ProjectApiController:
     alias: evrinoma.project.api.controller
@@ -15,6 +16,7 @@ services:
   evrinoma.project.api.controller:
     class: Evrinoma\ProjectBundle\Controller\ProjectApiController
     arguments: ['@evrinoma.project.manager']
+    autowire: true
 
   evrinoma.project.manager:
     alias: Evrinoma\ProjectBundle\Manager\ProjectManager
