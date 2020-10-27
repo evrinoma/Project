@@ -2,7 +2,6 @@ services:
   Evrinoma\ProjectBundle\Controller\ProjectController:
     alias:  evrinoma.project.controller
     public: true
-    deprecated:
 
   evrinoma.project.controller:
     class: Evrinoma\ProjectBundle\Controller\ProjectController
@@ -11,7 +10,6 @@ services:
   Evrinoma\ProjectBundle\Controller\ProjectApiController:
     alias: evrinoma.project.api.controller
     public: true
-    deprecated:
 
   evrinoma.project.api.controller:
     class: Evrinoma\ProjectBundle\Controller\ProjectApiController
