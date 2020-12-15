@@ -5,6 +5,7 @@ namespace Evrinoma\ProjectBundle\Model;
 use Doctrine\ORM\Mapping as ORM;
 use Evrinoma\UtilsBundle\Entity\ActiveTrait;
 use Evrinoma\UtilsBundle\Entity\CreateUpdateAtTrait;
+use Evrinoma\UtilsBundle\Entity\IdTrait;
 use JMS\Serializer\Annotation\Type;
 
 /**
@@ -13,18 +14,9 @@ use JMS\Serializer\Annotation\Type;
  */
 abstract class AbstractBaseProject
 {
-    use ActiveTrait, CreateUpdateAtTrait;
+    use IdTrait, ActiveTrait, CreateUpdateAtTrait;
 
 //region SECTION: Fields
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
     /**
      * @var string
      *
@@ -58,14 +50,6 @@ abstract class AbstractBaseProject
 //endregion Fields
 
 //region SECTION: Getters/Setters
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
     /**
      * @return string
      */
