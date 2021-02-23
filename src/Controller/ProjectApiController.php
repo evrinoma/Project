@@ -3,12 +3,10 @@
 namespace Evrinoma\ProjectBundle\Controller;
 
 
-use Doctrine\ORM\Decorator\EntityManagerDecorator;
-use Doctrine\ORM\EntityManagerInterface;
 use Evrinoma\ProjectBundle\Manager\ProjectManager;
 use Evrinoma\UtilsBundle\Controller\AbstractApiController;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Swagger\Annotations as SWG;
+use OpenApi\Annotations as OA;
 
 /**
  * Class GridApiController
@@ -49,8 +47,8 @@ final class ProjectApiController extends AbstractApiController
 
     /**
      * @Rest\Get("/api/project", options={"expose"=true}, name="api_project")
-     * @SWG\Get(tags={"project"})
-     * @SWG\Response(response=200,description="Returns projects")
+     * @OA\Get(tags={"project"})
+     * @OA\Response(response=200,description="Returns projects")
      *
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
@@ -61,8 +59,8 @@ final class ProjectApiController extends AbstractApiController
 
     /**
      * @Rest\Get("/api/project/column_defs", options={"expose"=true}, name="api_column_defs_project")
-     * @SWG\Get(tags={"project"})
-     * @SWG\Response(response=200,description="Returns column_defs project")
+     * @OA\Get(tags={"project"})
+     * @OA\Response(response=200,description="Returns column_defs project")
      *
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
