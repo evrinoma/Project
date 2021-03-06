@@ -87,8 +87,8 @@
 </script>
 
 <style lang="scss">
-    @import "../../../../../../../../../node_modules/ag-grid-community/dist/styles/ag-grid.css";
-    @import "../../../../../../../../../node_modules/ag-grid-community/dist/styles/ag-theme-balham-dark.css";
+    @import "../../../../../../../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+    @import "../../../../../../../node_modules/ag-grid-community/dist/styles/ag-theme-balham-dark.css";
 
     .ui.segment.block {
         height: 90vh;
