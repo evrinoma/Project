@@ -12,6 +12,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class EvrinomaProjectBundle extends Bundle
 {
+    public const PROJECT_BUNDLE = 'project';
+
 //region SECTION: Public
     public function build(ContainerBuilder $container)
     {

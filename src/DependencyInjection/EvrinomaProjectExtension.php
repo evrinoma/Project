@@ -3,7 +3,7 @@
 
 namespace Evrinoma\ProjectBundle\DependencyInjection;
 
-use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
+use Evrinoma\ProjectBundle\EvrinomaProjectBundle;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -101,7 +101,7 @@ class EvrinomaProjectExtension extends Extension
 //region SECTION: Getters/Setters
     public function getAlias()
     {
-        return 'project';
+        return EvrinomaProjectBundle::PROJECT_BUNDLE;
     }
 //endregion Getters/Setters
 }
