@@ -3,6 +3,7 @@
 namespace Evrinoma\ProjectBundle\Model;
 
 use Doctrine\ORM\Mapping as ORM;
+use Evrinoma\UtilsBundle\Entity\ActiveInterface;
 use Evrinoma\UtilsBundle\Entity\ActiveTrait;
 use Evrinoma\UtilsBundle\Entity\CreateUpdateAtTrait;
 use Evrinoma\UtilsBundle\Entity\IdTrait;
@@ -12,7 +13,7 @@ use JMS\Serializer\Annotation\Type;
  * Project
  * @ORM\MappedSuperclass
  */
-abstract class AbstractBaseProject
+abstract class AbstractBaseProject implements ActiveInterface
 {
     use IdTrait, ActiveTrait, CreateUpdateAtTrait;
 
