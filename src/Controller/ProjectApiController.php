@@ -54,7 +54,7 @@ final class ProjectApiController extends AbstractApiController
      */
     public function projectAction()
     {
-        return $this->json($this->projectManager->setRestSuccessOk()->getAll(), $this->projectManager->getRestStatus());
+        return $this->json($this->projectManager->setRestOk()->getAll(), $this->projectManager->getRestStatus());
     }
 
     /**
@@ -66,6 +66,6 @@ final class ProjectApiController extends AbstractApiController
      */
     public function projectColumnDefsAction()
     {
-        return $this->json($this->projectManager->setRestSuccessOk()->getColumnDefs(), $this->projectManager->getRestStatus());
+        return $this->json($this->projectManager->setRestOk()->getColumnDefs(), $this->projectManager->getRestStatus());
     }
 }
