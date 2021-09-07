@@ -23,5 +23,11 @@
         "exclude-from-classmap": [
             "/Tests/"
         ]
+    },
+    "repositories": {
+        "utils": {
+            "type": "vcs",
+            "url": "https://github.com/evrinoma/UtilsBundle.git"
+        }
     }
 }
